@@ -1,0 +1,2 @@
+# XMLMerger
+La función basica es que puedas importar el archivo .zip del sat con las facturas, y se regresará un archivo de excel con Serie,Folio,RFC,Nombre,Fecha,Subtotal,Descuento,IVA,Total y Descripcion de las facturas.
