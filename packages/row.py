@@ -22,7 +22,23 @@ class row:
             self.descuento = float(root.attrib['Descuento'])
         except KeyError:
             self.descuento = 0.00
-        self.iva = round((float(self.subtotal) - float(self.descuento)) * .16, 2)
+        # self.iva = round((float(self.subtotal) - float(self.descuento)) * .16, 2)
+        # self.iva = (float(self.subtotal) - float(self.descuento)) * .16
+
+        self.iva = 0.0
+
+        for elem in root:
+            try:
+                if elem.tag == r"{http://www.sat.gob.mx/cfd/4}Impuestos":
+                    print(elem.attrib["TotalImpuestosTrasladados"])
+                    self.iva = float(elem.attrib["TotalImpuestosTrasladados"])
+            
+            except KeyError:
+
+                self.iva = 0.0
+
+                print("Probablemente no tiene IVA")
+
         self.total = float(root.attrib['Total'])
 
         self.descripcion = ''

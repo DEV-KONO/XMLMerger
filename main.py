@@ -41,5 +41,5 @@ if __name__ == "__main__":
     global downloads_path
     global xlsx_path
     downloads_path = str(Path.home() / "Downloads")
-    xlsx_path = downloads_path + f'\\Movimientos de Tarjeta {datetime.today().strftime("%d-%m-%Y %H%M%S %p")}.xlsx'
+    xlsx_path = downloads_path + f'\\Facturas {datetime.today().strftime("%d-%m-%Y %H%M%S %p")}.xlsx'
     main()
